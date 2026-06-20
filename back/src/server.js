@@ -1,4 +1,4 @@
-import express, { json } from "express";
+import express from "express";
 import cors from "cors";
 import articleRouter from "./routes/articleRoutes.js";
 import journalistRouter from "./routes/journalistRoutes.js";
@@ -7,7 +7,9 @@ const app = express();
 
 
 // Enable CORS for all routes and origins
-app.use(cors());
+app.use(cors({
+    origin: "https://articles-website-eta.vercel.app",
+  }));
 
 // Enable json serialization
 app.use(json());
@@ -16,7 +18,7 @@ app.use("/api/articles", articleRouter);
 app.use("/api/journalists", journalistRouter);
 app.use("/api/categories", categoryRouter);
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
