@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import cors from "cors";
 import articleRouter from "./routes/articleRoutes.js";
 import journalistRouter from "./routes/journalistRoutes.js";
