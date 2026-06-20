@@ -1,7 +1,7 @@
 // src/services/api.js
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:4000/api";
+const API_BASE_URL = "https://articles-api-z15w.onrender.com/api";
 
 export const getArticles = async (params = {}) => {
   const query = new URLSearchParams();
